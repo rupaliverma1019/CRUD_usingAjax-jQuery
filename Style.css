@@ -1,3 +1,54 @@
 .table {
     width: 100%;
 }
+
+
+/* Style the table */
+
+.my-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+/* Style the header row */
+
+.header-row {
+    background-color: #f0f0f0;
+}
+
+
+/* Style the data rows */
+
+.data-row:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.data-row:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+
+/* Style table cells */
+
+.data-cell {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+
+/* Style the buttons */
+
+.btn {
+    padding: 5px 10px;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.btn-danger {
+    background-color: #d9534f;
+    color: #fff;
+}

@@ -18,7 +18,20 @@
     <input type="text" class="form-control" id="textid" />
     <button type="submit" id="btnadd">Submit</button>
     
-    <a href="data.php">click</a>
+    <table class="table" >
+        <h3>Show Information</h3>
+        <thead>
+            <!-- <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Text</th>
+
+            </tr> -->
+        </thead>
+    </table>
+    <tbody id="tbody"></tbody>
 </form>
 <div id="msg"></div>
 <script src="js/jqajax.js"></script>
