@@ -4,21 +4,15 @@ include('dbConnection.php');
 $data = stripslashes(file_get_contents("php://input"));
 $mydata = json_decode($data, true);
 
-$id = $mydata['id'];
-$name = $mydata['name'];
-$phone = $mydata['phone'];
-$email = $mydata['email'];
-$text = $mydata['text'];
+$id = $mydata['sid'];
 
-if (!empty($id) && !empty($name) && !empty($phone) && !empty($email) && !empty($text)) {
-    $sql = "UPDATE student SET name = '$name', phone = '$phone', email = '$email', text = '$text' WHERE id = '$id'";
+$sql = "SELECT * FROM student where id = {$id}";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
 
-    if ($conn->query($sql) === TRUE) {
-        echo "Data updated successfully";
-    } else {
-        echo "Unable to update data: " . $conn->error;
-    }
-} else {
-    echo "Fill All Fields";
-}
+// Set the response header to indicate JSON content
+header('Content-Type: application/json');
+
+// Return the data as a JSON-encoded string
+echo json_encode($row);
 ?>
