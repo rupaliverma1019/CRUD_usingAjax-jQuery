@@ -1,54 +1,33 @@
+.form {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    margin: 5px 5% 5px 5%;
+    background-image: linear-gradient(to right, plum, pink);
+}
+
 .table {
-    width: 100%;
+    /* border: 1px solid black; */
+    /* border-radius: 15px; */
 }
 
-
-/* Style the table */
-
-.my-table {
-    border-collapse: collapse;
-    width: 100%;
+.showdata {
+    /* border: 1px solid black; */
+    margin: 5px 5% 5px 5%;
+    background-image: linear-gradient(to right, plum, pink);
 }
 
-
-/* Style the header row */
-
-.header-row {
-    background-color: #f0f0f0;
+th,
+td {
+    padding: 15px;
+    text-align: left;
 }
 
-
-/* Style the data rows */
-
-.data-row:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.data-row:nth-child(odd) {
-    background-color: #ffffff;
-}
-
-
-/* Style table cells */
-
-.data-cell {
-    padding: 8px;
-    border: 1px solid #ddd;
-}
-
-
-/* Style the buttons */
-
-.btn {
-    padding: 5px 10px;
-}
-
-.btn-warning {
-    background-color: #ffc107;
-    color: #000;
-}
-
-.btn-danger {
-    background-color: #d9534f;
-    color: #fff;
+@media only screen and (max-width:600px) {
+    .showdata {
+        border: 1px solid black;
+        border-radius: 15px;
+        margin: 5px 5% 5px 5%;
+        background-image: linear-gradient(to right, plum, pink);
+    }
 }
