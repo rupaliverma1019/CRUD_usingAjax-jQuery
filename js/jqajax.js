@@ -159,6 +159,11 @@ $(document).ready(function() {
             data: JSON.stringify(mydata), // Send the data as a string
             success: function(data) {
                 console.log(data); // Data should be parsed as JSON
+                $("#nameid").val(data.name);
+                $("#phoneid").val(data.phone);
+                $("#emailid").val(data.email);
+                $("#textid").val(data.text);
+
             },
         });
     });
