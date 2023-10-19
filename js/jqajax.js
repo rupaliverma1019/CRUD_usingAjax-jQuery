@@ -45,11 +45,12 @@ $(document).ready(function() {
     $("#myform").submit(function(e) {
         e.preventDefault();
 
+        let stid = $("#stuid").val();
         let nm = $("#nameid").val();
         let ph = $("#phoneid").val();
         let em = $("#emailid").val();
         let txt = $("#textid").val();
-        mydata = { name: nm, phone: ph, email: em, text: txt };
+        mydata = { id: stid, name: nm, phone: ph, email: em, text: txt };
         console.log(mydata);
         $.ajax({
             url: "insert.php",
@@ -90,68 +91,11 @@ $(document).ready(function() {
     // updating the data
 
 
-    // // Function to populate the editing form with data for a specific ID
-    // function populateEditForm(id) {
-    //     $.ajax({
-    //         url: "retrieve.php", // Replace with the URL to fetch data for a specific ID
-    //         method: "POST",
-    //         data: JSON.stringify({ id: id }),
-    //         success: function(data) {
-    //             var rowData = JSON.parse(data);
-    //             $("#edit-id").val(rowData.id);
-    //             $("#edit-name").val(rowData.name);
-    //             $("#edit-phone").val(rowData.phone);
-    //             $("#edit-email").val(rowData.email);
-    //             $("#edit-text").val(rowData.text);
-    //         }
-    //     });
-    // }
-
-    // // Handle the click event for the "Edit" button
-    // $("#msg").on("click", ".btn-edit", function() {
-    //     var id = $(this).attr("data-sid");
-    //     populateEditForm(id);
-    // });
-
-    // // Handle the submit event for the edit form (Update Data)
-    // $("#edit-form").submit(function(e) {
-    //     e.preventDefault();
-
-    //     var id = $("#edit-id").val();
-    //     var name = $("#edit-name").val();
-    //     var phone = $("#edit-phone").val();
-    //     var email = $("#edit-email").val();
-    //     var text = $("#edit-text").val();
-
-    //     var editData = { id: id, name: name, phone: phone, email: email, text: text };
-
-    //     $.ajax({
-    //         url: "edit.php", // Create an update script
-    //         method: "POST",
-    //         data: JSON.stringify(editData),
-    //         success: function(data) {
-    //             // Handle success (e.g., show a message to the user)
-    //             alert("Data updated: " + data);
-    //             // Optionally, refresh the data table
-    //             showdata();
-    //         }
-    //     });
-    // });
-
-
-
-
-
-
-
-
-
-
     $("#msg").on("click", ".btn-edit", function() {
         console.log("edit button clicked");
         let id = $(this).attr("data-sid");
         console.log(id);
-        mydata = { sid: id };
+        mydata = { id: id };
         $.ajax({
             url: "edit.php",
             method: "POST",
@@ -159,6 +103,7 @@ $(document).ready(function() {
             data: JSON.stringify(mydata), // Send the data as a string
             success: function(data) {
                 console.log(data); // Data should be parsed as JSON
+                $("#stuid").val(data.id)
                 $("#nameid").val(data.name);
                 $("#phoneid").val(data.phone);
                 $("#emailid").val(data.email);

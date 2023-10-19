@@ -19,7 +19,8 @@
     <input type="email" class="form-control" id="emailid" />
     <label>Text</label>
     <input type="text" class="form-control" id="textid" />
-    <button type="submit" id="btnadd">Submit</button>
+    <button type="submit">Submit</button>
+    
     
     <!-- <table class="table" >
         <h3>Show Information</h3>
